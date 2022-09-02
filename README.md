@@ -1,4 +1,4 @@
-Captioning-based Extensive Painting
+Captioning-Based Extensive Painting
 =============
 
 
