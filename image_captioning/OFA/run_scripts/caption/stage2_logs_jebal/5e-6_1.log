@@ -1,0 +1,23 @@
+2022-06-06 15:31:49 - utils.py[line:258] - INFO: distributed init (rank 0): env://
+2022-06-06 15:31:49 - utils.py[line:261] - INFO: Start init
+2022-06-06 15:31:49 - utils.py[line:258] - INFO: distributed init (rank 1): env://
+2022-06-06 15:31:49 - utils.py[line:261] - INFO: Start init
+Retry: 1, with value error <class 'RuntimeError'>
+Retry: 1, with value error <class 'RuntimeError'>
+Traceback (most recent call last):
+  File "/home/wgus5950/miniconda3/envs/ofa/lib/python3.7/runpy.py", line 193, in _run_module_as_main
+    "__main__", mod_spec)
+  File "/home/wgus5950/miniconda3/envs/ofa/lib/python3.7/runpy.py", line 85, in _run_code
+    exec(code, run_globals)
+  File "/home/wgus5950/miniconda3/envs/ofa/lib/python3.7/site-packages/torch/distributed/launch.py", line 340, in <module>
+    main()
+  File "/home/wgus5950/miniconda3/envs/ofa/lib/python3.7/site-packages/torch/distributed/launch.py", line 326, in main
+    sigkill_handler(signal.SIGTERM, None)  # not coming back
+  File "/home/wgus5950/miniconda3/envs/ofa/lib/python3.7/site-packages/torch/distributed/launch.py", line 301, in sigkill_handler
+    raise subprocess.CalledProcessError(returncode=last_return_code, cmd=cmd)
+subprocess.CalledProcessError: Command '['/home/wgus5950/miniconda3/envs/ofa/bin/python3', '-u', '../../train.py', '--local_rank=1', '../../dataset/caption_data/caption_train_stage2_new.tsv,../../dataset/caption_data/caption_val_ct.tsv', '--selected-cols=1,4,2', '--bpe-dir=../../utils/BPE', '--user-dir=../../ofa_module', '--restore-file=../../checkpoints/caption_large_best_clean.pt', '--reset-optimizer', '--reset-dataloader', '--reset-meters', '--save-dir=/database/jhkim/stage2_checkpoints_jebal//5e-6_1', '--task=caption', '--arch=ofa_large', '--criterion=scst_reward_criterion', '--batch-size=1', '--update-freq=8', '--encoder-normalize-before', '--decoder-normalize-before', '--share-decoder-input-output-embed', '--share-all-embeddings', '--layernorm-embedding', '--patch-layernorm-embedding', '--code-layernorm-embedding', '--resnet-drop-path-rate=0.0', '--encoder-drop-path-rate=0.0', '--decoder-drop-path-rate=0.0', '--dropout=0.0', '--attention-dropout=0.0', '--weight-decay=0.01', '--optimizer=adam', '--adam-betas=(0.9,0.999)', '--adam-eps=1e-08', '--clip-norm=1.0', '--lr-scheduler=polynomial_decay', '--lr=5e-6', '--end-learning-rate=2e-7', '--max-epoch=1', '--warmup-ratio=0.06', '--log-format=simple', '--log-interval=10', '--fixed-validation-seed=7', '--no-epoch-checkpoints', '--keep-best-checkpoints=1', '--save-interval=1', '--validate-interval=1', '--save-interval-updates=500', '--validate-interval-updates=500', '--eval-cider', '--eval-cider-cached-tokens=../../dataset/caption_data/cider_cached_tokens/coco-valid-words.p', '--eval-args={"beam":5,"max_len_b":16,"no_repeat_ngram_size":3}', '--best-checkpoint-metric=cider', '--maximize-best-checkpoint-metric', '--max-src-length=80', '--max-tgt-length=20', '--find-unused-parameters', '--freeze-encoder-embedding', '--freeze-decoder-embedding', '--freeze-resnet', '--add-type-embedding', '--scale-attn', '--scale-fc', '--scale-heads', '--disable-entangle', '--num-bins=1000', '--patch-image-size=480', '--scst', '--scst-cider-cached-tokens=../../dataset/caption_data/cider_cached_tokens/coco-train-words.p', '--scst-args={"beam":5,"max_len_b":16,"no_repeat_ngram_size":3}', '--memory-efficient-fp16', '--fp16-scale-window=512', '--num-workers=0']' returned non-zero exit status 255.
+*****************************************
+Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+*****************************************
+Killing subprocess 719404
+Killing subprocess 719405
