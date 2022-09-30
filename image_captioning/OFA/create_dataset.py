@@ -9,14 +9,14 @@ import csv
 import pandas as pd
 from regex import F
 
-file_list = os.listdir("/database/jhkim/amster/resized2/")
+file_list = os.listdir("images_directory")
 l1 = []
 image_str = []
 
 for file in file_list:
     l1.append(file[:-4])
     
-    img = Image.open("/database/jhkim/amster/resized2/"+file)
+    img = Image.open("images_directory"+file)
     format = img.format
     
     img = np.array(img)
