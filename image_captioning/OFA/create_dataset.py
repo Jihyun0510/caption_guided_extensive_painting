@@ -47,5 +47,5 @@ df['caption'] = [np.nan for i in range(len(file_list))]
 df['c4'] = ['' for i in range(len(file_list))]
 df['img_str'] = image_str
 
-path = "/home/wgus5950/OFA/dataset/caption_data"
+path = "save_directory"
 df.to_csv(f'{path}/amster_half_128.tsv', sep="\t", index=False, header=False)
